@@ -55,7 +55,7 @@ export const missions: Mission[] = [
       "Mars Pathfinder and its tiny rover Sojourner proved that low-cost Mars missions were feasible. Sojourner, weighing just 11.5 kg, became the first wheeled vehicle on another planet, analyzing nearby rocks and demonstrating technologies for future rovers.",
     facts: [
       "Landed using revolutionary airbag bouncing system",
-      "Sojourner was only 65 cm long — the size of a microwave",
+      "Sojourner was only 65 cm long, about the size of a microwave",
       "Returned 2.3 billion bits of data including 16,500 images",
       "Operated for 83 days, 12x its design lifetime",
     ],
@@ -88,7 +88,7 @@ export const missions: Mission[] = [
     description:
       "Opportunity holds the off-Earth driving record, traversing over 45 km during its 15-year mission. Landing on the opposite side of Mars from Spirit, it found definitive proof that liquid water once existed on the Martian surface.",
     facts: [
-      "Drove 45.16 km — a marathon and then some",
+      "Drove 45.16 km, a marathon and then some",
       "Operated for 5,352 sols (14 years, 136 days)",
       "Found hematite 'blueberries' proving ancient water",
       "Silenced by a planet-wide dust storm in June 2018",
@@ -122,7 +122,7 @@ export const missions: Mission[] = [
     description:
       "Curiosity is the largest and most capable rover ever sent to Mars. Powered by a nuclear battery, it has been exploring Gale Crater for over a decade, climbing Mount Sharp and analyzing rock layers that tell the story of Mars' wet past.",
     facts: [
-      "Weighs 899 kg — the size of a small car",
+      "Weighs 899 kg, about the size of a small car",
       "Powered by a plutonium-238 radioisotope generator",
       "Found organic molecules and seasonal methane variations",
       "Still operating after 12+ years on Mars",
@@ -156,7 +156,7 @@ export const missions: Mission[] = [
     description:
       "Perseverance is actively searching for biosignatures in Jezero Crater, an ancient lake bed. It brought Ingenuity, the first aircraft to achieve powered flight on another planet, opening an entirely new dimension for planetary exploration.",
     facts: [
-      "Ingenuity completed 72 flights — first powered flight on another world",
+      "Ingenuity completed 72 flights, achieving the first powered flight on another world",
       "Producing oxygen from CO₂ with the MOXIE experiment",
       "Collecting sealed rock samples for future Earth return",
       "Carries a piece of Martian meteorite back to Mars",
@@ -190,7 +190,7 @@ export const missions: Mission[] = [
     description:
       "SpaceX's fully reusable Starship is being designed as the vehicle that could carry humans to Mars. With a capacity of 100+ tonnes to the Martian surface, it represents the most ambitious interplanetary transport system ever conceived.",
     facts: [
-      "Stands 121 meters tall — the largest rocket ever built",
+      "Stands 121 meters tall, the largest rocket ever built",
       "Designed to carry 100+ tonnes to Mars",
       "Fully reusable to dramatically lower launch costs",
       "Orbital refueling enables deep-space missions",
@@ -205,7 +205,7 @@ export const missions: Mission[] = [
     yearLabel: "2028",
     tagline: "Europe's life-hunting rover",
     description:
-      "The Rosalind Franklin rover will carry a drill capable of reaching 2 meters below the Martian surface — deep enough to find organic molecules shielded from harsh radiation. It represents Europe's most ambitious Mars mission to date.",
+      "The Rosalind Franklin rover will carry a drill capable of reaching 2 meters below the Martian surface, deep enough to find organic molecules shielded from harsh radiation. It represents Europe's most ambitious Mars mission to date.",
     facts: [
       "Equipped with a 2-meter subsurface drill",
       "Named after the chemist who helped decode DNA",
@@ -222,7 +222,7 @@ export const missions: Mission[] = [
     yearLabel: "2030s–2040s",
     tagline: "Humanity's next giant leap",
     description:
-      "Multiple space agencies and private companies are working toward landing humans on Mars within the next two decades. A crewed mission would represent the furthest humans have ever traveled — a 6-month journey to a world 225 million km away.",
+      "Multiple space agencies and private companies are working toward landing humans on Mars within the next two decades. A crewed mission would represent the furthest humans have ever traveled, a 6-month journey to a world 225 million km away.",
     facts: [
       "Journey time: approximately 6–9 months each way",
       "NASA's Moon-to-Mars program targets the 2030s–2040s",

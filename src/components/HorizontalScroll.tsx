@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { missions } from "../data/missions";
 import MissionSection from "./MissionSection";
+import VisionSection from "./VisionSection";
 import Credits from "./Credits";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,9 +28,11 @@ export default function HorizontalScroll({
   stableOnProgress.current = onProgress;
   stableOnActiveIndex.current = onActiveIndex;
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
   useEffect(() => {
     if (!enabled || !containerRef.current) return;
-    if (window.innerWidth <= 768) return;
+    if (isMobile) return;
 
     const container = containerRef.current;
     const panels = gsap.utils.toArray<HTMLElement>(".panel", container);
@@ -63,7 +66,7 @@ export default function HorizontalScroll({
 
       panels.forEach((panel, i) => {
         const textEls = panel.querySelectorAll(
-          ".mission-year, .mission-name, .mission-tagline, .mission-badge, .mission-description, .mission-facts li, .credits-title, .credits-body, .credits-meta"
+          ".mission-year, .mission-name, .mission-tagline, .mission-badge, .mission-description, .mission-facts li, .vision-label, .vision-title, .vision-intro, .vision-card, .credits-title, .credits-body, .credits-meta"
         );
 
         if (i === 0) {
@@ -103,10 +106,11 @@ export default function HorizontalScroll({
   }, [enabled, scrollTriggerRef]);
 
   return (
-    <div ref={containerRef} className="horizontal-scroll-container">
+    <div ref={containerRef} className={`horizontal-scroll-container${isMobile ? " mobile-vertical" : ""}`}>
       {missions.map((mission) => (
         <MissionSection key={mission.id} mission={mission} />
       ))}
+      <VisionSection />
       <Credits />
     </div>
   );

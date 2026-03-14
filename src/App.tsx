@@ -6,6 +6,8 @@ import TimelineBar from "./components/TimelineBar";
 import "./styles/global.css";
 import "./styles/mission.css";
 
+const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
 export default function App() {
   const [introComplete, setIntroComplete] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -19,7 +21,7 @@ export default function App() {
   const handleDotClick = useCallback((index: number) => {
     const st = scrollTriggerRef.current;
     if (!st) return;
-    const numPanels = 14;
+    const numPanels = 15;
     const targetProgress = index / (numPanels - 1);
     const scrollTo = st.start + (st.end - st.start) * targetProgress;
     window.scrollTo({ top: scrollTo, behavior: "smooth" });
@@ -34,7 +36,7 @@ export default function App() {
         onActiveIndex={setActiveIndex}
         scrollTriggerRef={scrollTriggerRef}
       />
-      {introComplete && (
+      {introComplete && !isMobile && (
         <TimelineBar
           progress={progress}
           activeIndex={activeIndex}

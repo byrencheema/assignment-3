@@ -30,7 +30,7 @@ export default function MissionSection({ mission }: MissionSectionProps) {
           <img
             className="mission-image"
             src={mission.image}
-            alt={`${mission.name} — ${mission.tagline}`}
+            alt={`${mission.name}: ${mission.tagline}`}
             loading="lazy"
           />
         </div>

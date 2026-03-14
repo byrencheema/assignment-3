@@ -14,12 +14,12 @@ export default function Credits() {
           The next chapter will be written not just by robots, but by human
           explorers who will walk on Martian soil, breathe Martian-made oxygen,
           and look back at Earth as a pale blue dot in their sky. Mars is no
-          longer a dream — it is a destination.
+          longer a dream. It is a destination.
         </p>
         <div className="credits-meta">
-          <p>Physics 20A — Astronomy Final Project</p>
+          <p>Physics 20A Astronomy Final Project</p>
           <p>All images courtesy of NASA/JPL-Caltech, ESA, and SpaceX</p>
-          <p>Byren Cheema — 2026</p>
+          <p>Byren Cheema & Siddharth Gupta, 2026</p>
         </div>
       </div>
     </section>
