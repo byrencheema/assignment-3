@@ -6,6 +6,9 @@ interface IntroScreenProps {
   onComplete: () => void;
 }
 
+const TITLE = "MARS";
+const SUBTITLE = "A History of Exploration";
+
 export default function IntroScreen({ onComplete }: IntroScreenProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
@@ -28,31 +31,51 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
       return;
     }
 
-    gsap.set([titleRef.current, subtitleRef.current, hintRef.current], {
-      opacity: 0,
-      y: 20,
-    });
+    const titleChars = titleRef.current?.querySelectorAll(".char");
+    const subtitleChars = subtitleRef.current?.querySelectorAll(".char");
+
+    if (titleChars) gsap.set(titleChars, { opacity: 0, y: 40 });
+    if (subtitleChars) gsap.set(subtitleChars, { opacity: 0 });
+    gsap.set(hintRef.current, { opacity: 0 });
     gsap.set(bgRef.current, { opacity: 0, scale: 1.15 });
 
     const tl = gsap.timeline();
 
     tl.to(bgRef.current, {
-      opacity: 0.6,
+      opacity: 0.5,
       scale: 1,
-      duration: 1.5,
+      duration: 1.8,
       ease: "power2.out",
-    })
-      .to(
-        titleRef.current,
-        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-        "-=0.6"
-      )
-      .to(
-        subtitleRef.current,
-        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-        "-=0.3"
-      )
-      .to(hintRef.current, { opacity: 1, y: 0, duration: 0.5 }, "-=0.1");
+    });
+
+    if (titleChars) {
+      tl.to(
+        titleChars,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.12,
+          ease: "power3.out",
+        },
+        "-=1.0"
+      );
+    }
+
+    if (subtitleChars) {
+      tl.to(
+        subtitleChars,
+        {
+          opacity: 1,
+          duration: 0.04,
+          stagger: 0.04,
+          ease: "none",
+        },
+        "-=0.1"
+      );
+    }
+
+    tl.to(hintRef.current, { opacity: 1, duration: 0.5 }, "+=0.3");
 
     const dismiss = () => {
       if (completedRef.current) return;
@@ -91,10 +114,18 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
       />
       <div className="intro-content">
         <h1 ref={titleRef} className="intro-title">
-          Mars
+          {TITLE.split("").map((ch, i) => (
+            <span key={i} className="char">
+              {ch}
+            </span>
+          ))}
         </h1>
         <p ref={subtitleRef} className="intro-subtitle">
-          A History of Exploration
+          {SUBTITLE.split("").map((ch, i) => (
+            <span key={i} className="char">
+              {ch === " " ? "\u00A0" : ch}
+            </span>
+          ))}
         </p>
       </div>
       <div ref={hintRef} className="intro-scroll-hint">
