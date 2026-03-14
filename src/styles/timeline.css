@@ -1,0 +1,125 @@
+.timeline-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 56px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7));
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  padding: 0 2.5rem;
+}
+
+.timeline-track {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-ticks {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.timeline-tick {
+  width: 1px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-tick:nth-child(5n) {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.timeline-progress {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  transform: translateY(-50%);
+  background: var(--mars-red);
+  border-radius: 1px;
+  transition: width 0.15s linear;
+  box-shadow: 0 0 6px var(--mars-red-glow);
+}
+
+.timeline-dots {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #111;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-dot:hover {
+  border-color: var(--dust);
+  transform: scale(1.4);
+}
+
+.timeline-dot.active {
+  background: var(--mars-red);
+  border-color: var(--mars-red);
+  box-shadow: 0 0 10px var(--mars-red-glow);
+}
+
+.timeline-dot.future {
+  border-color: rgba(74, 144, 217, 0.4);
+}
+
+.timeline-dot.future.active {
+  background: var(--future-blue);
+  border-color: var(--future-blue);
+  box-shadow: 0 0 10px var(--future-blue-glow);
+}
+
+.timeline-dot-label {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-heading);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.timeline-dot:hover .timeline-dot-label,
+.timeline-dot.active .timeline-dot-label {
+  opacity: 1;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .timeline-bar {
+    display: none;
+  }
+}

@@ -1,0 +1,104 @@
+@import url("https://cdn.jsdelivr.net/gh/mortezaom/google-sans-cdn@master/fonts.css");
+
+:root {
+  --bg-deep: #000000;
+  --bg-panel: #0a0a0a;
+  --bg-card: #111111;
+  --mars-red: #c1440e;
+  --mars-red-glow: rgba(193, 68, 14, 0.4);
+  --dust: #d4a574;
+  --dust-dim: rgba(212, 165, 116, 0.12);
+  --text-primary: #f0eeeb;
+  --text-secondary: #8a8a8a;
+  --text-dim: #444444;
+  --future-blue: #4a90d9;
+  --future-blue-glow: rgba(74, 144, 217, 0.3);
+  --font-heading: "Google Sans", "Product Sans", sans-serif;
+  --font-body: "Google Sans", "Product Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(1px 1px at 15% 25%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(0.5px 0.5px at 60% 15%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 80% 50%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 10% 80%, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(0.5px 0.5px at 70% 90%, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(1px 1px at 90% 10%, rgba(255, 255, 255, 0.25), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.15), transparent),
+    radial-gradient(0.5px 0.5px at 30% 60%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 85% 35%, rgba(255, 255, 255, 0.2), transparent);
+  background-size: 250px 250px, 300px 300px, 200px 200px, 350px 350px,
+    180px 180px, 280px 280px, 320px 320px, 240px 240px, 260px 260px,
+    290px 290px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.005) 2px,
+    rgba(255, 255, 255, 0.005) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-dim);
+  border-radius: 2px;
+}
